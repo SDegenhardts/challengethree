@@ -2,3 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+*::-webkit-scrollbar {
+    width: 3px;              
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);        
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(253, 224, 71);    
+    border: 3px solid rgb(253, 224, 71); 
+  }
