@@ -52,12 +52,8 @@ export default function Comstorage() {
     const conj = comments.filter((i) => i.id === 7)
     return (
         <main className="p-10">
-            <br></br>
-            <br></br>
-            <br></br>
-            <div className="flex w-[670px] flex-col text-2xl justify-center items-center gap-36">{conj.map((i) => (i.comment))}</div>
+            <div className="mt-4 mb-9 flex w-[670px] flex-col text-2xl justify-center items-center gap-36">{conj.map((i) => (i.comment))}</div>
             <div className="gap-7">
-                <br></br>
                 <div className="flex justify-end text-base">{conj.map((i) => (i.name))}</div>
                 <div className="flex justify-end text-[0.5em]">{conj.map((i) => (i.data))}</div>
             </div>
