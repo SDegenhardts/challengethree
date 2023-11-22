@@ -1,15 +1,9 @@
 'use client'
 
-interface Algo {
-    narue: merda
-    aniversarioDaMae: Number
-}
-
 import { styled } from "styled-components"
 import { useState, useEffect } from "react"
 import { BsFillArrowRightSquareFill } from "react-icons/bs"
 import { BsFillArrowLeftSquareFill } from "react-icons/bs"
-import { merda } from "./hsdk"
 
 export default function Comanager() {
 
@@ -64,7 +58,7 @@ export default function Comanager() {
     return (
         <Wrapper>
             <section className="flex items-center justify-between w-[1500px] h-[300px] text-yellow-300 p-16">
-                <button onClick={() => advence == comments[(comments.)]?setAdvence(comments[0]):setAdvence(comments[comments.indexOf(advence)-1])} className="text-4xl hover:scale-125 transition-all"><BsFillArrowLeftSquareFill /></button>
+                <button onClick={() => advence == comments[(comments.length)] ? setAdvence(comments[0]) : setAdvence(comments[comments.indexOf(advence) + 1])} className="text-4xl hover:scale-125 transition-all"><BsFillArrowLeftSquareFill /></button>
                 <main className="p-10">
                     <div className="mt-20 mb-9 flex w-[670px] flex-col text-2xl justify-center items-center gap-36">{advence.comment}</div>
                     <div className="gap-7">
@@ -72,9 +66,7 @@ export default function Comanager() {
                         <div className="flex justify-end text-[0.5em]">{advence.data}</div>
                     </div>
                 </main>
-                <button onClick={() => advence == comments[comments.length -1]?setAdvence(comments[0]):setAdvence(comments[comments.indexOf(advence)+2])} className="text-4xl hover:scale-125 transition-all"><BsFillArrowRightSquareFill /></button>
-                <button onClick={() => console.log(comments[comments.indexOf(advence)+2])}>aqui</button>
-                <button onClick={() => console.log(advence)}>aqui</button>
+                <button onClick={() => advence == comments[comments.length] ? setAdvence(comments[0]) : setAdvence(comments[comments.indexOf(advence) + 7])} className="text-4xl hover:scale-125 transition-all"><BsFillArrowRightSquareFill /></button>
             </section>
         </Wrapper>
     )
