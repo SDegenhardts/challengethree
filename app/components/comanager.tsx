@@ -1,5 +1,10 @@
 'use client'
 
+interface Type {
+    id: number
+    comment: string
+}
+
 import { styled } from "styled-components"
 import { useState, useEffect } from "react"
 import { BsFillArrowRightSquareFill } from "react-icons/bs"
@@ -50,7 +55,7 @@ export default function Comanager() {
         data: "7/10/2023"
     }
     ]
-    const conj = comments.filter((i) => i.id === 6)
+    // const conj = comments.filter((i) => i.id === 6)
 
     // const [previous, setPrevious] = useState(comments[0])
     const [advence, setAdvence] = useState(comments[0])
@@ -58,7 +63,7 @@ export default function Comanager() {
     return (
         <Wrapper>
             <section className="flex items-center justify-between w-[1500px] h-[300px] text-yellow-300 p-16">
-                <button onClick={() => advence == comments[(comments.length)] ? setAdvence(comments[0]) : setAdvence(comments[comments.indexOf(advence) + 1])} className="text-4xl hover:scale-125 transition-all"><BsFillArrowLeftSquareFill /></button>
+                <button onClick={() => advence == comments[comments.length - 1] ? setAdvence(comments[0]) : setAdvence((advence))} className="text-4xl hover:scale-125 transition-all"><BsFillArrowLeftSquareFill /></button>
                 <main className="p-10">
                     <div className="mt-20 mb-9 flex w-[670px] flex-col text-2xl justify-center items-center gap-36">{advence.comment}</div>
                     <div className="gap-7">
@@ -66,7 +71,7 @@ export default function Comanager() {
                         <div className="flex justify-end text-[0.5em]">{advence.data}</div>
                     </div>
                 </main>
-                <button onClick={() => advence == comments[comments.length] ? setAdvence(comments[0]) : setAdvence(comments[comments.indexOf(advence) + 7])} className="text-4xl hover:scale-125 transition-all"><BsFillArrowRightSquareFill /></button>
+                <button onClick={() => advence == comments[comments.length - 1] ? setAdvence(comments[0]) : setAdvence(comments[comments.indexOf(advence) + 7])} className="text-4xl hover:scale-125 transition-all"><BsFillArrowRightSquareFill /></button>
             </section>
         </Wrapper>
     )
@@ -81,5 +86,4 @@ const Wrapper = styled.image`
     background-color: #000000a2;
     margin: 7%;
     overflow: auto;
-
-`
+    `
